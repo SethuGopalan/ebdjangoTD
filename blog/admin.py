@@ -4,7 +4,7 @@ from django.contrib.admin.options import ModelAdmin
 from  blog.models import Profile,Post,Tag
 
 @admin.register(Profile)
-class ProfileAdmin(admin,ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     model = Profile
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
@@ -19,12 +19,12 @@ class PostAdmin(admin.ModelAdmin):
         "title",
         "subtitle",
         "slug",
-        "publish_data",
+        "publish_date",
         "published",
     )
     list_filter= (
         "published",
-        "publish_data",
+        "publish_date",
 
     )
     list_editable =(
@@ -32,7 +32,7 @@ class PostAdmin(admin.ModelAdmin):
         "title",
         "subtitle",
         "slug",
-        "published_date",
+        "publish_date",
         "published"
     )
     serch_feilds=(
@@ -42,12 +42,14 @@ class PostAdmin(admin.ModelAdmin):
         "body",
 
     )
-    prepopulated_fields=(
-
-        "slug",
-        "title",
-        "subtitle",
+    prepopulated_fields={
+        
+        "slug":(
+            "title",
+            "subtitle",
 
     )
+
+    }
     date_hierarchy = "publish_date"
     save_on_top = True

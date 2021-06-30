@@ -20,7 +20,7 @@ class Tag(models.Model):
         return self.name
 class Post(models.Model):
     class Meta:
-        ordering = ['-publish_data']
+        ordering = ['-publish_date']
     title = models.CharField(max_length=255, unique=True)
     subtitle = models.CharField(max_length=255,blank=True)
     slug = models.SlugField(max_length=255, unique=True) 
