@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+GRAPHENE = {
+    
+    "SCHEMA": "blog.schema.schema",
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
