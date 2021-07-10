@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin.options import ModelAdmin
 
-from  blog.models import Profile,Post,Tag
+from  blog.models import Profile, Post, Tag
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):

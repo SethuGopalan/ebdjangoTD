@@ -10,7 +10,9 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        # migrations.swappable_dependency(django.contrib.auth.get_user_model()),
     ]
 
     operations = [
